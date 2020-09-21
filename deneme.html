@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ $('#submit').click(function(){
+ username=$('#username').val();
+ sifre=$('#password').val();
+ uyari="";
+if(username=="" || password=="") {
+uyari+=" isim alani boþ olamaz ";
+}
+ if(sifre=="") {
+ uyari+=" þifre alani boþ olamaz ";
+ }
+ if( username.length<3 || username.length>8) {
+ uyari+=" username alaný 3-8 karakterden oluþmalýdýr ";
+ }
+ if( sifre.length<3 || sifre.length>8) {
+ uyari+=" þifre alaný 3-8 karakterden oluþmalýdýr "; 
+ }
+$('.uyari').text(uyari);
+ });
+});
+</script>
+</head>
+<body>
+<br>
+<div class="row">
+<div class="col-md-3"> </div>
+<div class="col-md-6">
+<form>
+ <div class="uyari" style="color:red;"> </div>
+ <br>
+ Username:<br>
+ <input type="text" name="email" id="username" placeholder="Email"><br>
+ Passowrd:<br>
+ <input type="password" name="password" id="password" placeholder="Password"><br> <br>
+ <input type="button" value="gonder" class="btn btn-default" name="submit" id="submit">
+</form>
+</div>
+<div class="col-md-3"> </div>
+</div>
+</body>
+</html>
